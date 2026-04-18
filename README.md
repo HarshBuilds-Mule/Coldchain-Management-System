@@ -78,5 +78,3 @@ Contributions are welcome:
 5. Open a pull request
 
 ---
-
-If you want, I can also make this more **professional (resume-ready / portfolio)** or add **badges, architecture diagrams, and API flow explanation**.
