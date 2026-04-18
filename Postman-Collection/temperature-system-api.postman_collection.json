@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "9afb05b0-dd2c-47eb-b642-ce3169a4f90d",
+		"name": "temperature-system-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "add new temp and recorded time in table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"temperature\":6.28,\r\n    \"recorded_at\":\"2023-10-23T10:25:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/sys/shipments/4/temperatures",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"shipments",
+						"4",
+						"temperatures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all temperatures",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/sys/temperatures",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"temperatures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all temp and recorded time by shipment id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/sys/shipments/2/temperatures",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"shipments",
+						"2",
+						"temperatures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get latest temp by shipment id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/sys/shipments/1/latest-temp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"shipments",
+						"1",
+						"latest-temp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "temp violation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startTime\": \"2022-08-07T00:00:00\",\r\n  \"endTime\": \"2025-08-10T00:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/sys/temperature/violation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"temperature",
+						"violation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

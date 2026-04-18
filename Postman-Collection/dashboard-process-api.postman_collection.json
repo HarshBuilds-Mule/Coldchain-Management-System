@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "4f29511b-78db-4ea5-971f-6fb8a1f72246",
+		"name": "dashboard-process-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "GET-dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/prc/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"prc",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard aggregation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startTime\": \"2025-08-07T00:00:00\",\r\n  \"endTime\": \"2025-08-10T00:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/prc/dashboard/aggregation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"prc",
+						"dashboard",
+						"aggregation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

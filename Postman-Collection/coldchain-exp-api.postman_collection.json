@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "46d4be97-be99-4f72-87f0-0fd0b4d0c757",
+		"name": "coldchain-exp-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "GET-frontend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/exp/frontend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"frontend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Reset email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"resetexample2@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/exp/resetPass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"resetPass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST shipment tracking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/exp/shipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"shipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET alert info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/exp/alert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"alert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mark resolve alerts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8085/exp/alert/1004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"alert",
+						"1004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Admin POV user data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8085/exp/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST send messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Doom\",\r\n    \"email\": \"DoomCop@gmail.com\",\r\n    \"subject\": \"DoomsDay\",\r\n    \"message\": \"Lol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/exp/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"exp",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

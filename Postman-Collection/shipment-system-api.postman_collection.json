@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "ee0c7442-aaf5-4aee-8d94-1963bd1da4c5",
+		"name": "shipment-system-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "put shipments by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"delayed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/shipments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"shipments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add shipments new data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shipment_code\":\"SHIP12345\", \r\n    \"origin\":\"Madhya Pradesh\", \r\n    \"destination\":\"Jabalpur\", \r\n    \"status\":\"in_transit\", \r\n    \"start_time\":\"2025-07-24 10:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/shipments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"shipments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete shipments by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/shipments/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"shipments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET shipments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sys/shipments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"shipments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

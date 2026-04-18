@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "f21308cc-18ae-4879-8850-b80b83482c1c",
+		"name": "RBAC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "check roles and give shipment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"Bearer eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0.eyJlbWFpbCI6ICJ2aWV3ZXJAY29sZGNoYWluLmNvbSIsImlhdCI6IDE3NTQwNzAwNzYsImV4cCI6IDE3NTQwNzM2NzZ9.KTf54Ytx6qiF07esVKhUaDVd8XwgrZRuRwBTMF6oaV8\",\r\n    \"role\": \"viewer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/exp/auth/shipments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"exp",
+						"auth",
+						"shipments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check roles and give alerts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"Bearer eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0.eyJlbWFpbCI6ICJ2aWV3ZXJAY29sZGNoYWluLmNvbSIsImlhdCI6IDE3NTQwNzAwNzYsImV4cCI6IDE3NTQwNzM2NzZ9.KTf54Ytx6qiF07esVKhUaDVd8XwgrZRuRwBTMF6oaV8\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/exp/auth/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"exp",
+						"auth",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post data in alerts as admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"Bearer eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0.eyJlbWFpbCI6ICJ2aWV3ZXJAY29sZGNoYWluLmNvbSIsImlhdCI6IDE3NTQwNzAwNzYsImV4cCI6IDE3NTQwNzM2NzZ9.KTf54Ytx6qiF07esVKhUaDVd8XwgrZRuRwBTMF6oaV8\",\r\n    \"role\": \"viewer\",\r\n    \"status\":1,\r\n    \"id\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/exp/auth/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"exp",
+						"auth",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give dashboard data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role\": \"viewer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/exp/auth/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"exp",
+						"auth",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

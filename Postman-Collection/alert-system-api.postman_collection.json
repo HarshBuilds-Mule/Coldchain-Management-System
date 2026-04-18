@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "26bf48af-81ca-456d-9447-484c5902f0ee",
+		"name": "alert-system-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23513349"
+	},
+	"item": [
+		{
+			"name": "Fetch all alerts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/sys/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"sys",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alerts for a specific shipment by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sys/shipments/1/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"shipments",
+						"1",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All unresolved alerts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/sys/alerts/active",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"alerts",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new alert for a shipment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"temp_high\",\r\n  \"message\": \"Temperature crossed 8°C\",\r\n  \"alerted_at\": \"2025-07-16T11:30:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sys/shipments/1/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"shipments",
+						"1",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark alert as resolved",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/sys/alerts/6/resolve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"sys",
+						"alerts",
+						"6",
+						"resolve"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
