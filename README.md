@@ -1,30 +1,31 @@
 # Coldchain-Management-System
 
-## 📑 Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Quick Start](#quick-start)
-- [Run Commands](#run-commands)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-
-
 ## 📝 Description
 
-Coldchain-Management-System is a robust and type-safe solution designed to streamline the logistics of temperature-sensitive products. Built with TypeScript to ensure code quality and maintainability, this system provides a reliable framework for monitoring and managing the cold chain supply process. The project prioritizes data integrity and operational reliability through a comprehensive automated testing suite, ensuring that critical storage and transport conditions are accurately tracked for industries such as pharmaceuticals, food safety, and chemical logistics.
+Coldchain-Management-System is a robust solution designed to streamline the logistics of temperature-sensitive products. It ensures reliable monitoring and management of cold chain operations, maintaining data integrity and operational efficiency.
+
+The system is built using **MuleSoft** for API-led connectivity, **SvelteKit** for the frontend, and **MySQL** for data storage. It supports industries like pharmaceuticals, food safety, and chemical logistics where maintaining optimal temperature conditions is critical.
+
+---
 
 ## ✨ Features
 
-- 🧪 Testing
+* Real-time temperature monitoring
+* Shipment tracking and management
+* Alert system for temperature breaches
+* Role-based access control (RBAC)
+* Dashboard for analytics and insights
+* Secure authentication and user management
 
+---
 
 ## 🛠️ Tech Stack
 
-- 📜 TypeScript
+* **MuleSoft** – API development and integration
+* **SvelteKit** – Frontend framework
+* **MySQL** – Database
 
+---
 
 ## ⚡ Quick Start
 
@@ -32,126 +33,50 @@ Coldchain-Management-System is a robust and type-safe solution designed to strea
 # Clone the repository
 git clone https://github.com/HarshBuilds-Mule/Coldchain-Management-System.git
 
-# Install dependencies and run
-# (See Development Setup below)
+# Navigate to frontend
+cd Svelte/frontend
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
 ```
+
+---
 
 ## 🚀 Run Commands
 
-- **dev**: `npm run dev`
-- **build**: `npm run build`
-- **preview**: `npm run preview`
-- **prepare**: `npm run prepare`
-- **check**: `npm run check`
-- **check:watch**: `npm run check:watch`
+* `npm run dev` – Start development server
+* `npm run build` – Build for production
+* `npm run preview` – Preview production build
 
-
-## 📸 Screenshots
-
-> **Tip:** You can auto-generate a beautiful project mockup image using the **Screenshot** button above!
-
-<p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Main+Application+View" alt="Main Application View" width="80%"/>
-</p>
-
-<p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Feature+Showcase" alt="Feature Showcase" width="80%"/>
-</p>
+---
 
 ## 📁 Project Structure
 
 ```
 .
-├── Mule-jar-files
-│   ├── alert-system-api.jar
-│   ├── auth-exp-api.jar
-│   ├── auth-process-api.jar
-│   ├── auth-system-api.jar
-│   ├── coldchain-exp-api.jar
-│   ├── dashboard-process-api.jar
-│   ├── shipment-system-api.jar
-│   └── temperature-system-api.jar
-├── MySQL
-│   └── DB_coldchain.sql
-├── Postman-Collection
-│   ├── RBAC.postman_collection.json
-│   ├── alert-system-api.postman_collection.json
-│   ├── auth-exp-api.postman_collection.json
-│   ├── auth-process-api.postman_collection.json
-│   ├── auth-system=api.postman_collection.json
-│   ├── coldchain-exp-api.postman_collection.json
-│   ├── dashboard-process-api.postman_collection.json
-│   ├── shipment-system-api.postman_collection.json
-│   └── temperature-system-api.postman_collection.json
-├── RAML
-│   ├── exp-frontend-m4-api-1.0.2-raml.zip
-│   ├── prc-connection-m4-api-1.0.0-raml.zip
-│   ├── sys-geopify-m4-api-1.0.1-raml.zip
-│   ├── sys-openmeteo-m4-api-1.0.1-raml.zip
-│   └── sys-openroute-m4-api-1.0.0-raml.zip
+├── Mule-jar-files        # MuleSoft APIs (System, Process, Experience layers)
+├── MySQL                 # Database schema
+├── Postman-Collection    # API testing collections
+├── RAML                  # API specifications
 └── Svelte
-    ├── frontend
-    │   ├── package.json
-    │   ├── src
-    │   │   ├── app.d.ts
-    │   │   ├── app.html
-    │   │   ├── components
-    │   │   │   ├── Footer
-    │   │   │   │   └── Footer.svelte
-    │   │   │   └── Navbar
-    │   │   │       ├── Navbar.svelte
-    │   │   │       └── Navbar2.svelte
-    │   │   └── routes
-    │   │       ├── +error.svelte
-    │   │       ├── +page.svelte
-    │   │       ├── AboutUs
-    │   │       │   └── +page.svelte
-    │   │       ├── Admin
-    │   │       │   └── +page.svelte
-    │   │       ├── Alerts
-    │   │       │   └── +page.svelte
-    │   │       ├── Contact
-    │   │       │   └── +page.svelte
-    │   │       ├── Dashboard
-    │   │       │   └── +page.svelte
-    │   │       ├── Landing_Page
-    │   │       │   └── +page.svelte
-    │   │       ├── Login
-    │   │       │   └── +page.svelte
-    │   │       ├── Privacy
-    │   │       │   └── +page.svelte
-    │   │       ├── ProfileSettings
-    │   │       │   └── +page.svelte
-    │   │       ├── ResetPass
-    │   │       │   └── +page.svelte
-    │   │       ├── Shipment
-    │   │       │   └── +page.svelte
-    │   │       ├── SignUp
-    │   │       │   └── +page.svelte
-    │   │       ├── Terms
-    │   │       │   └── +page.svelte
-    │   │       └── faq
-    │   │           └── +page.svelte
-    │   ├── static
-    │   │   ├── favicon.ico
-    │   │   └── robots.txt
-    │   ├── svelte.config.js
-    │   ├── tsconfig.json
-    │   └── vite.config.ts
-    └── package.json
+    └── frontend          # SvelteKit frontend application
 ```
+
+---
 
 ## 👥 Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions are welcome:
 
-1. **Fork** the repository
-2. **Clone** your fork: `git clone https://github.com/HarshBuilds-Mule/Coldchain-Management-System.git`
-3. **Create** a new branch: `git checkout -b feature/your-feature`
-4. **Commit** your changes: `git commit -am 'Add some feature'`
-5. **Push** to your branch: `git push origin feature/your-feature`
-6. **Open** a pull request
-
-Please ensure your code follows the project's style guidelines and includes tests where applicable.
+1. Fork the repository
+2. Create a new branch (`feature/your-feature`)
+3. Commit your changes
+4. Push to your branch
+5. Open a pull request
 
 ---
+
+If you want, I can also make this more **professional (resume-ready / portfolio)** or add **badges, architecture diagrams, and API flow explanation**.
